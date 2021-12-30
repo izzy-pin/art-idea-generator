@@ -1,13 +1,127 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", "Arial Narrow", Helvetica, Arial,
+    "Lucida Grande", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-image: url("./images/bckgrd.jpg");
+  background-color: grey;
+  background-size: cover;
+  background-size: 1500px 1000px;
+  padding-bottom: 60px;
+}
+
+h1 {
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-align: end;
+  margin: 0, 20px, 0, 50px;
+  padding-right: 15px;
+  text-decoration: double;
+}
+
+.intro {
+  font-size: 1.2rem;
+}
+
+p {
+  letter-spacing: 4px;
+  text-align: end;
+  margin-left: 10px;
+  padding-right: 15px;
+}
+
+.idea {
+  padding: 10px;
+  /* margin: 10px; */
+  border-radius: 30px;
+  background: rgba(125, 132, 145, 0.5);
+  margin: auto;
+  width: 70%;
+}
+
+/* .centre {
+  max-height: 40%;
+  text-align: center;
+  overflow-y: scroll;
+} */
+
+ul {
+  font-size: medium;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+li::before {
+  content: "・ﾟ✧";
+  padding-right: 8px;
+}
+
+.choose,
+button {
+  font-size: 1rem;
+  font-weight: bolder;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid white;
+  background-color: transparent;
+  letter-spacing: 2px;
+}
+
+button {
+  padding: 5px;
+  margin: 20px;
+}
+
+.choose {
+  padding: 7px 5px 7px 5px;
+}
+
+.choose:hover,
+button:hover {
+  background-color: #7d8491;
+}
+
+a:link,
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+footer {
+  font-size: 0.6rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+@media screen and (min-width: 1100px) {
+  header {
+    margin-right: 5%;
+  }
+  /* footer {
+    max-width: 90%;
+  } */
+  .intro {
+    margin-left: 20%;
+  }
+  .idea {
+    width: 50%;
+  }
 }

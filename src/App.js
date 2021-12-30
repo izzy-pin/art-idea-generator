@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/header";
+import ArtAdder from "./components/artAdder";
+import { useState } from "react";
+import Footer from "./components/footer";
+import List from "./components/list";
+import Clear from "./components/clear";
 
 function App() {
+  const [workType, setWorkType] = useState([]);
+  const [artpieces, setArtpieces] = useState(["Your first idea..."]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <ArtAdder
+          setWorkType={setWorkType}
+          artpieces={artpieces}
+          setArtpieces={setArtpieces}
+        />
+        <List
+          workType={workType}
+          artpieces={artpieces}
+          setArtpieces={setArtpieces}
+        />
+
+        <Clear setArtpieces={setArtpieces} />
+      </main>
+      <Footer />
     </div>
   );
 }
