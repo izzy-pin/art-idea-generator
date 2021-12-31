@@ -7,22 +7,23 @@ const ArtAdder = ({ setWorkType, setArtpieces }) => {
   const makeArtPiece = (artStyle) => {
     setArtpieces((currArtpieces) => {
       if (!artStyle) {
-        return ["Please select an art style"];
+        return [{ piece: "Please select an art style", dislike: false }];
       }
       const artMedia = artComponents[artStyle].artObject;
       const artSubj = artComponents[artStyle].naturalElement;
 
       const newArtObjIndex = getRndInteger(0, artMedia.length);
       const newNaturalElIndex = getRndInteger(0, artSubj.length);
-      const newArt = `${artMedia[newArtObjIndex]} ${artSubj[newNaturalElIndex]}`;
+      const piece = `${artMedia[newArtObjIndex]} ${artSubj[newNaturalElIndex]}`;
+      const newArt = { piece, dislike: false };
       if (
-        currArtpieces.includes("Please select a an art style") ||
-        currArtpieces.includes("Something new?...") ||
-        currArtpieces.includes("Your first idea with this new setup...")
+        currArtpieces[0].piece === "Please select an art style" ||
+        currArtpieces[0].piece === "Something new?..." ||
+        currArtpieces[0].piece === "Your first idea..."
       ) {
-        return [newArt];
+        return [{ ...newArt }];
       }
-      return [...currArtpieces, newArt];
+      return [...currArtpieces, { ...newArt }];
     });
   };
 
@@ -57,7 +58,7 @@ const ArtAdder = ({ setWorkType, setArtpieces }) => {
           <option value="time">Time Piece</option>
           <option value="video">Video</option>
         </select>
-        <button> Create ・ﾟ✧</button>
+        <button className="createOrClear"> Create ・ﾟ✧</button>
       </form>
     </>
   );

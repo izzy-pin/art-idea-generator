@@ -1,12 +1,15 @@
 const Clear = ({ setArtpieces }) => {
   const removeArt = () => {
     setArtpieces(() => {
-      return ["Something new?..."];
+      return [{ piece: "Something new?..." }];
     });
   };
   return (
     <>
-      <button onClick={removeArt}> Clear</button>
+      <button onClick={removeArt} className="createOrClear">
+        {" "}
+        Clear
+      </button>
     </>
   );
 };

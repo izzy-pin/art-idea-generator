@@ -66,7 +66,7 @@ li::before {
 }
 
 .choose,
-button {
+.createOrClear {
   font-size: 1rem;
   font-weight: bolder;
   color: white;
@@ -76,7 +76,7 @@ button {
   letter-spacing: 2px;
 }
 
-button {
+.createOrClear {
   padding: 5px;
   margin: 20px;
 }
@@ -86,7 +86,7 @@ button {
 }
 
 .choose:hover,
-button:hover {
+.createOrClear:hover {
   background-color: #7d8491;
 }
 

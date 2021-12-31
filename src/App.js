@@ -8,7 +8,12 @@ import Clear from "./components/clear";
 
 function App() {
   const [workType, setWorkType] = useState([]);
-  const [artpieces, setArtpieces] = useState(["Your first idea..."]);
+  const [artpieces, setArtpieces] = useState([
+    {
+      piece: "Your first idea...",
+      dislike: false,
+    },
+  ]);
   return (
     <div className="App">
       <Header />
