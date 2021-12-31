@@ -5,6 +5,7 @@ import { useState } from "react";
 import Footer from "./components/footer";
 import List from "./components/list";
 import Clear from "./components/clear";
+import ClearDisliked from "./components/clearDisliked";
 
 function App() {
   const [workType, setWorkType] = useState([]);
@@ -30,6 +31,7 @@ function App() {
         />
 
         <Clear setArtpieces={setArtpieces} />
+        <ClearDisliked setArtpieces={setArtpieces} />
       </main>
       <Footer />
     </div>
