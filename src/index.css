@@ -37,20 +37,19 @@ p {
   padding-right: 15px;
 }
 
+.choose__h2 {
+  letter-spacing: 4px;
+  font-weight: 400;
+  margin-top: 60px;
+}
+
 .idea {
   padding: 10px;
-  /* margin: 10px; */
   border-radius: 30px;
   background: rgba(125, 132, 145, 0.5);
   margin: auto;
   width: 70%;
 }
-
-/* .centre {
-  max-height: 40%;
-  text-align: center;
-  overflow-y: scroll;
-} */
 
 ul {
   font-size: medium;
@@ -58,11 +57,6 @@ ul {
   padding: 0;
   margin: 0;
   letter-spacing: 2px;
-}
-
-li::before {
-  content: "・ﾟ✧";
-  padding-right: 8px;
 }
 
 .choose,
@@ -78,7 +72,7 @@ li::before {
 
 .createOrClear {
   padding: 5px;
-  margin: 20px;
+  margin: 20px 0 20px 30px;
 }
 
 .choose {
@@ -115,9 +109,7 @@ footer {
   header {
     margin-right: 5%;
   }
-  /* footer {
-    max-width: 90%;
-  } */
+
   .intro {
     margin-left: 20%;
   }
