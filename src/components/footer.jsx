@@ -11,10 +11,7 @@ const Footer = () => {
           Eberhard Grossgasteiger{" "}
         </a>
       </p>
-      <p>
-        app by izzy pinder, an art grad emptied of inspo, fresh out of original
-        ideas
-      </p>
+      <p>app by izzy pinder, looking to spark an idea</p>
     </footer>
   );
 };
