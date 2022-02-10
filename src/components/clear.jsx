@@ -3,12 +3,16 @@ const Clear = ({ setArtpieces }) => {
     setArtpieces(() => {
       return [{ piece: "Something new?..." }];
     });
+    localStorage.setItem(
+      "art-ideas",
+      JSON.stringify([{ piece: "Something new?..." }])
+    );
   };
   return (
     <>
       <button onClick={removeArt} className="createOrClear">
         {" "}
-        Clear
+        Clear All
       </button>
     </>
   );

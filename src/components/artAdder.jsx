@@ -2,13 +2,10 @@ import { useState } from "react";
 import artComponents from "./artComponents";
 
 const ArtAdder = ({ setWorkType, setArtpieces }) => {
-  const [artStyle, setArtStyle] = useState("");
+  const [artStyle, setArtStyle] = useState("light");
 
   const makeArtPiece = (artStyle) => {
     setArtpieces((currArtpieces) => {
-      if (!artStyle) {
-        return [{ piece: "Please select an art style", dislike: false }];
-      }
       const artMedia = artComponents[artStyle].artObject;
       const artSubj = artComponents[artStyle].naturalElement;
 
@@ -17,21 +14,23 @@ const ArtAdder = ({ setWorkType, setArtpieces }) => {
       const piece = `${artMedia[newArtObjIndex]} ${artSubj[newNaturalElIndex]}`;
       const newArt = { piece, dislike: false };
       if (
-        currArtpieces[0].piece === "Please select an art style" ||
         currArtpieces[0].piece === "Something new?..." ||
         currArtpieces[0].piece === "Your first idea..."
       ) {
+        localStorage.setItem("art-ideas", JSON.stringify([{ ...newArt }]));
         return [{ ...newArt }];
       }
+      localStorage.setItem(
+        "art-ideas",
+        JSON.stringify([...currArtpieces, { ...newArt }])
+      );
       return [...currArtpieces, { ...newArt }];
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setWorkType((currentWorkTypes) => {
-      return artStyle;
-    });
+    setWorkType(artStyle);
     makeArtPiece(artStyle);
   };
 
@@ -43,6 +42,7 @@ const ArtAdder = ({ setWorkType, setArtpieces }) => {
     <>
       <form onSubmit={handleSubmit}>
         <select
+          defaultValue={"light"}
           className="choose"
           name="artwork"
           onChange={(event) => {
@@ -50,9 +50,6 @@ const ArtAdder = ({ setWorkType, setArtpieces }) => {
             setArtStyle(selectedArtType);
           }}
         >
-          <option disabled selected>
-            Choose a medium
-          </option>
           <option value="light">Light</option>
           <option value="sound">Audio</option>
           <option value="time">Time Piece</option>

@@ -2,8 +2,10 @@ const ClearDisliked = ({ setArtpieces }) => {
   const removeDisliked = () => {
     setArtpieces((currArtpieces) => {
       const likedArt = currArtpieces.filter((piece) => piece.dislike === false);
-      console.log(likedArt);
-      return [...likedArt];
+      if (likedArt.length > 0) {
+        localStorage.setItem("art-ideas", JSON.stringify([...likedArt]));
+        return [...likedArt];
+      }
     });
   };
   return (
