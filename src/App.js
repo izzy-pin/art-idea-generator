@@ -1,11 +1,11 @@
 import "./App.css";
-import Header from "./components/header";
-import ArtAdder from "./components/artAdder";
+import Header from "./components/Header";
+import ArtAdder from "./components/ArtAdder";
 import { useState } from "react";
-import Footer from "./components/footer";
-import List from "./components/list";
-import Clear from "./components/clear";
-import ClearDisliked from "./components/clearDisliked";
+import Footer from "./components/Footer";
+import List from "./components/List";
+import Clear from "./components/Clear";
+import ClearDisliked from "./components/ClearDisliked";
 
 function App() {
   const [workType, setWorkType] = useState([]);
@@ -19,6 +19,7 @@ function App() {
     <div className="App">
       <Header />
       <main>
+        <h2 className="choose__h2">Choose a medium to get started </h2>
         <ArtAdder
           setWorkType={setWorkType}
           artpieces={artpieces}
