@@ -17,7 +17,6 @@ const Dislike = ({ artpieces, setArtpieces, dislikedIdeas }) => {
     });
   };
   if (
-    artpieces[0].piece === "Please select an art style" ||
     artpieces[0].piece === "Something new?..." ||
     artpieces[0].piece === "Your first idea..."
   ) {
@@ -25,7 +24,7 @@ const Dislike = ({ artpieces, setArtpieces, dislikedIdeas }) => {
   } else {
     return (
       <button onClick={toggleJob} className="dislike">
-        🌗
+        ☄️
       </button>
     );
   }
