@@ -13,9 +13,12 @@ const List = ({ artpieces, setArtpieces }) => {
     <>
       <section className="idea">
         <ul>
-          {artpieces.map((art) => {
+          {artpieces.map((art, index) => {
             return (
-              <li key={art.piece} className={art.dislike ? "checked" : null}>
+              <li
+                key={`${performance.now()}${art.piece}${index}`}
+                className={art.dislike ? "checked" : null}
+              >
                 <Dislike
                   artpieces={artpieces}
                   setArtpieces={setArtpieces}
