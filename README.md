@@ -32,4 +32,4 @@
 
 Node v16.9.1
 
-![a screenshot of the app with idea list populated](/kp-generate/src/images/gen.png)
+![a screenshot of the app with idea list populated](src/images/gen.png)
