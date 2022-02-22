@@ -6,6 +6,7 @@ const ClearDisliked = ({ setArtpieces }) => {
         localStorage.setItem("art-ideas", JSON.stringify([...likedArt]));
         return [...likedArt];
       }
+      return [...currArtpieces];
     });
   };
   return (
