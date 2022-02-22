@@ -8,6 +8,10 @@
 - Ideas can be deleted in batches by selecting disliked ones or start afresh by clearing all.
 - Local storage is used to make ideas persist between sessions.
 
+## Have a go
+
+ Find the live version [here](https://an-idea-that-exists-only-here.netlify.app/)
+
 ### Technologies used
 
 - Node.js v16.9.1
