@@ -1,11 +1,12 @@
 import "./App.css";
 import Header from "./components/Header";
 import ArtAdder from "./components/ArtAdder";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import List from "./components/List";
 import Clear from "./components/Clear";
 import ClearDisliked from "./components/ClearDisliked";
+import getBackgroundImage from "./utils/utils";
 
 function App() {
   const [workType, setWorkType] = useState([]);
@@ -15,11 +16,19 @@ function App() {
       dislike: false,
     },
   ]);
+  const [bgSrc, setBgSrc] = useState({ source: "", nasa: false });
+  useEffect(() => {
+    getBackgroundImage(setBgSrc);
+  }, []);
   return (
     <div className="App">
-      <Header />
+      <Header bgSrc={bgSrc} />
       <main>
-        <h2 className="choose__h2">Choose a medium to get started </h2>
+        <div className={bgSrc.nasa ? "directions__div" : null}>
+          <h2 className={`choose__h2 ${bgSrc.nasa ? "Nasa__h2" : null}`}>
+            Choose a medium to get started{" "}
+          </h2>
+        </div>
         <ArtAdder
           setWorkType={setWorkType}
           artpieces={artpieces}
@@ -34,7 +43,7 @@ function App() {
         <Clear setArtpieces={setArtpieces} />
         <ClearDisliked setArtpieces={setArtpieces} />
       </main>
-      <Footer />
+      <Footer bgSrc={bgSrc} />
     </div>
   );
 }
