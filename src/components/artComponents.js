@@ -40,7 +40,7 @@ const artComponents = {
       "the milkyway",
       "wildfire",
       "an erupting volcano",
-      "raindrops bouncing off pavement in a moonsoon",
+      "raindrops bouncing off pavement in a monsoon",
     ],
   },
   sound: {
