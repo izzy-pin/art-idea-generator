@@ -1,6 +1,6 @@
-const Header = () => {
+const Header = ({ bgSrc }) => {
   return (
-    <header>
+    <header className={bgSrc.nasa ? "Nasa__header" : null}>
       <h1>An idea that exists only in this generator</h1>
       <p className="intro">
         An art concept / short text generator inspired by{" "}
