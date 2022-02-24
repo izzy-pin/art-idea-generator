@@ -5,14 +5,14 @@ const ArtAdder = ({ setWorkType, setArtpieces }) => {
   const [artStyle, setArtStyle] = useState("light");
 
   const makeArtPiece = (artStyle) => {
-    setArtpieces((currArtpieces) => {
-      const artMedia = artComponents[artStyle].artObject;
-      const artSubj = artComponents[artStyle].naturalElement;
+    const artMedia = artComponents[artStyle].artObject;
+    const artSubj = artComponents[artStyle].naturalElement;
+    const newArtObjIndex = getRndInteger(0, artMedia.length);
+    const newNaturalElIndex = getRndInteger(0, artSubj.length);
+    const piece = `${artMedia[newArtObjIndex]} ${artSubj[newNaturalElIndex]}`;
+    const newArt = { piece, dislike: false };
 
-      const newArtObjIndex = getRndInteger(0, artMedia.length);
-      const newNaturalElIndex = getRndInteger(0, artSubj.length);
-      const piece = `${artMedia[newArtObjIndex]} ${artSubj[newNaturalElIndex]}`;
-      const newArt = { piece, dislike: false };
+    setArtpieces((currArtpieces) => {
       if (
         currArtpieces[0].piece === "Something new?..." ||
         currArtpieces[0].piece === "Your first idea..."
