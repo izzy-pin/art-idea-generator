@@ -1,14 +1,14 @@
 const Footer = ({ bgSrc }) => {
   return (
     <footer className={bgSrc.nasa ? "Nasa__footer" : null}>
-      <p>
+      <p className="footer__p">
         app by{" "}
         <a href="https://github.com/izzy-pin" target="_blank" rel="noreferrer">
           izzy pinder
         </a>
         , looking to spark an idea
       </p>
-      <p>
+      <p className="footer__p">
         background{" "}
         {!bgSrc.nasa ? (
           <>
