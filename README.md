@@ -7,15 +7,12 @@
 - Users can select an art medium and randomly generate a piece of work on that theme.
 - Ideas can be deleted in batches by selecting disliked ones or start afresh by clearing all.
 - Local storage is used to make ideas persist between sessions.
+- The background image changes daily, using nasa's Astronomy Picture of the Day API.
+- - If an error occurs, a default image will display.
 
 ## Have a go
 
- Find the live version [here](https://an-idea-that-exists-only-here.netlify.app/)
-
-### Technologies used
-
-- Node.js v16.9.1
-- React v17.0.2
+Find the live version [here](https://an-idea-that-exists-only-here.netlify.app/)
 
 ## Setup
 
@@ -32,8 +29,13 @@
 
 - Run `npm start` in the terminal to start the server and to see live changes to the site as you save them.
 
-### Minimum software versions needed to run locally:
+### Technologies used
 
-Node v16.9.1
+- Node.js v16.9.1 (minimum version needed to run locally)
+- React v17.0.2
 
-![a screenshot of the app with idea list populated](src/images/gen.png)
+#### A note on styling
+
+- To account for exposure fluctuations in images from nasa's APOD API, text elements will conditionally render with a background when an API call is successful.
+  ![a screenshot of the app with idea list populated and background image from nasa's Astronomy Picture of the Day API](src/images/gen-nasa-image.png)
+  ![a screenshot of the app with idea list populated](src/images/gen.png)
